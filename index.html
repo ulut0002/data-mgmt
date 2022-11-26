@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cats</title>
+    <script src="./js/main.js" defer type="module"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src  'self'; 
+             img-src 'self' https://* *.thecatapi.com;
+             script-src 'self' 'unsafe-inline';
+             style-src 'self' 'unsafe-inline' googleapis.com;
+             font-src 'self' fonts.gstatic.com;
+             connect-src 'self' *.thecatapi.com;"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <section class="search--container">
+          <label for="categories" class="search--label"
+            >Select a category</label
+          >
+          <select
+            name="categories"
+            id="categories"
+            class="search--category--select"
+          >
+            <option>Loading..</option>
+          </select>
+        </section>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section class="error--container"></section>
+        <section class="result--container">
+          <h1 class="result-title">Cat Overload</h1>
+
+          <section class="cat-card-container">
+            <!-- 
+            <div class="cat-card">
+              <img
+                src="https://cdn2.thecatapi.com/images/9v.jpg"
+                alt="A cat named June"
+                class="cat-image"
+              />
+              <div class="cat-name-container">
+                <h3 class="cat-name">June</h3>
+              </div>
+            </div>
+             -->
+          </section>
+        </section>
+      </div>
+    </main>
+    <div class="overlay">
+      <div class="overlay-content">
+        <h1 class="overlay-header">Fetching...</h1>
+        <div class="loader-circle-wrap">
+          <svg
+            class="loader-spinner"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 72 72"
+          >
+            <circle cx="36" cy="36" r="32" stroke-miterlimit="10" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
