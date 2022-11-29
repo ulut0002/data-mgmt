@@ -1,13 +1,13 @@
 export default function pickRandomName() {
-  let num = Math.floor(Math.random() * catnames.length);
-  let name = catnames[num];
-  let removed = catnames.splice(num, 1);
+  let num = Math.floor(Math.random() * catNames.length);
+  let name = catNames[num];
+  let removed = catNames.splice(num, 1);
   return name; //same as removed[0]
 }
 
 //array of possible Cat names
 //feel free to add more of your own
-const catnames = [
+const catNames = [
   "Margot",
   "Angel",
   "Honey",
