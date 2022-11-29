@@ -103,8 +103,9 @@ select {
 
   --color-primary: #c6d4ff;
   --color-primary-dark: #7799ff;
+  --color-primary-light: #d5dffe;
 
-  --color-accent: hsl(164, 95%, 43%);
+  --color-accent: #dc3545;
   --color-text-1: #2c060f;
   --color-text-2: #1d1e18;
   --color-text-title: #4b4b7c;
@@ -224,6 +225,7 @@ body {
 .error--container {
   padding: 1rem;
   background-color: var(--color-accent);
+  color: var(--color-primary-light);
   border-radius: 0.5em;
 }
 

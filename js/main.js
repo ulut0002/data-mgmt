@@ -72,7 +72,7 @@ const APP = {
     if (!APP.html.category) return;
     APP.setInnerHTML(
       APP.html.category,
-      `<option>Select an option</option>` +
+      `<option value="-1">Select an option</option>` +
         categories
           .map(({ id, name }) => `<option value=${id}>${name}</option>`)
           .join("")
@@ -107,18 +107,19 @@ const APP = {
         })
         .join("")
     );
-    TODO: if (newEntry) APP.saveToStorage(storageKey, APP.data.names);
+    if (newEntry) APP.saveToStorage(storageKey, APP.data.names);
   },
 
-  search: function (category) {
+  search: function (userSelection) {
     APP.setInnerHTML(APP.html.error, "");
-    if (!category) {
+    if (userSelection === "-1" || !userSelection) {
       APP.setInnerHTML(APP.html.results, "");
+      APP.setInnerHTML(APP.html.error, "Make a selection");
       return;
     }
 
     const searchURL = new URL(APP.url.search);
-    searchURL.searchParams.set(`category_ids`, category);
+    searchURL.searchParams.set(`category_ids`, userSelection);
     searchURL.searchParams.set("limit", 30);
     searchURL.searchParams.set("api_key", APP.key.api);
     APP.spin(true);
